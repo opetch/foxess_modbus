@@ -95,8 +95,10 @@ H3_SMART_REGISTERS = SpecialRegisterConfig(
     individual_read_register_ranges=[(37609, 37620), (37632, 37636)],
 )
 # See https://github.com/nathanmarlor/foxess_modbus/pull/512
+# Charge period registers (41001-41006) are available on KH firmware 1.19+ per
+# Fox's KH Modbus protocol document V1.05.04.00; not inherited-invalid from H3.
 KH_REGISTERS = SpecialRegisterConfig(
-    invalid_register_ranges=[(41001, 41006), (41012, 41012), (41019, 43999), (31055, 31999)],
+    invalid_register_ranges=[(41012, 41012), (41019, 43999), (31055, 31999)],
     individual_read_register_ranges=[(41000, 41999)],
 )
 # See https://github.com/nathanmarlor/foxess_modbus/discussions/553
